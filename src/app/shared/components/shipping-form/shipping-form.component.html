@@ -1,0 +1,200 @@
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-8">
+                    <form [formGroup]="shippingForm" (ngSubmit)="onItemAdd()">
+                        <h2 class="text-center"><strong>Contact Details</strong></h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">First Name*</label>
+                                    <input class="form-control" formControlName="firstName">
+                                    <p class="alert alert-danger"
+                                        *ngIf="shipForm['firstName'].touched && shipForm['firstName'].hasError('required')">
+                                        This is mandatory field</p>
+                                    <ng-container *ngIf="shipForm['firstName'].dirty">
+                                        <p class="text-danger text-capitalize"
+                                            *ngIf="shipForm['firstName'].hasError('minlength')">
+                                            The minimum length of first Name should be
+                                            {{shipForm['firstName'].errors?.['minlength'].requiredLength}} and actual
+                                            length
+                                            {{shipForm['firstName'].errors?.['minlength'].actualLength}}
+                                        </p>
+                                        <p class="text-danger text-capitalize"
+                                            *ngIf=" shipForm['firstName'].hasError('maxlength')">
+                                            The maximum length of first name is
+                                            {{shipForm['firstName'].errors?.['maxlength'].requiredLength}}
+                                            and actual length is
+                                            {{shipForm['firstName'].errors?.['maxlength'].actualLength}}
+                                        </p>
+                                    </ng-container>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">last Name*</label>
+                                    <input class="form-control" formControlName="lastName">
+                                    <p class="alert alert-danger"
+                                        *ngIf="shipForm['lastName'].touched && shipForm['lastName'].hasError('required')">
+                                        This is mandatory field</p>
+                                    <ng-container *ngIf="shipForm['lastName'].dirty">
+                                        <p class="text-danger text-capitalize"
+                                            *ngIf="shipForm['lastName'].hasError('minlength')">
+                                            The minimum length of last Name should be
+                                            {{shipForm['lastName'].errors?.['minlength'].requiredLength}} and actual
+                                            length
+                                            {{shipForm['lastName'].errors?.['minlength'].actualLength}}
+                                        </p>
+                                        <p class="text-danger text-capitalize"
+                                            *ngIf=" shipForm['lastName'].hasError('maxlength')">
+                                            The maximum length of last name is
+                                            {{shipForm['lastName'].errors?.['maxlength'].requiredLength}}
+                                            and actual length is
+                                            {{shipForm['lastName'].errors?.['maxlength'].actualLength}}
+                                        </p>
+                                    </ng-container>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Email*</label>
+                            <input class="form-control" formControlName="email">
+                            <p class="alert alert-danger"
+                                *ngIf="shipForm['email'].touched && shipForm['email'].hasError('required')">This is
+                                mandatory field</p>
+                            <p class="text-danger text-capitalize"
+                                *ngIf="shipForm['email'].dirty && shipForm['email'].hasError('pattern')">
+                                Please enter valid email id
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Contact No*</label>
+                            <input class="form-control" formControlName="contactNo">
+                            <p class="alert alert-danger"
+                                *ngIf="shipForm['contactNo'].touched && shipForm['contactNo'].hasError('required')">This
+                                is mandatory field</p>
+                        </div>
+                        <h2 class="text-center"><strong>Shipping Details</strong></h2>
+                        <div class="form-group">
+                            <label for="">Flat NO*</label>
+                            <input class="form-control" formControlName="flat">
+                            <p class="alert alert-danger"
+                                *ngIf="shipForm['flat'].touched && shipForm['flat'].hasError('required')">This is
+                                mandatory field</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Address*</label>
+                            <input class="form-control" formControlName="address">
+                            <p class="alert alert-danger"
+                                *ngIf="shipForm['address'].touched && shipForm['address'].hasError('required')">This is
+                                mandatory field</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">City*</label>
+                                    <input class="form-control" formControlName="city">
+                                    <p class="alert alert-danger"
+                                        *ngIf="shipForm['city'].touched && shipForm['city'].hasError('required')">This
+                                        is mandatory field</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">State*</label>
+                                    <input class="form-control" formControlName="state">
+                                    <p class="alert alert-danger"
+                                        *ngIf="shipForm['state'].touched && shipForm['state'].hasError('required')">This
+                                        is mandatory field</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Postal Code*</label>
+                                    <input class="form-control" formControlName="postalCode">
+                                    <p class="alert alert-danger"
+                                        *ngIf="shipForm['postalCode'].touched && shipForm['postalCode'].hasError('required')">
+                                        This is mandatory field</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Payment Details*</label>
+                                    <input class="form-control" formControlName="payment">
+                                    <p class="alert alert-danger"
+                                        *ngIf="shipForm['payment'].touched && shipForm['payment'].hasError('required')">
+                                        This is mandatory field</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <button class="btn btn-outline-info"  >Submit Details</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <ul class="list-group">
+                                        <li class="list-group-item" ><strong>Sub Total:{{prodObj.price }} </strong></li>
+                                        <li class="list-group-item"><strong>Sales Tax(6.5):{{saleTax|number: '1.0-0'}}</strong></li>
+                                        <li class="list-group-item"><strong>Shipping Fee : Free</strong></li>
+                                        <li class="list-group-item"><strong>Total Due:{{totalDue |number: '1.0-0'}}</strong></li>
+                                    </ul>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

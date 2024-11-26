@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-md-4" *ngFor="let item of productArr">
+        <div class="card mb-4" >
+            <img src="{{item.imgUrl}}" [alt]="'{{item.model}}'"  class="img-fluid">
+        <div class="card-body">
+    <div class="row">
+            <div class="col-md-6">
+              <div class="card-title"> <h2><strong> {{item.model}}</strong></h2>
+              </div>
+               </div>
+               <div class="col-md-6">
+               <div class="card-title">
+                <button class="btn btn-success">
+                    <i class="fa-solid fa-star"></i>
+                    {{item.rating}}
+                </button>
+               </div>
+               </div>
+          </div>
+            <p>{{item.features}}</p>
+            <span>{{item.price | currency :'INR'}}</span>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-info radius" [routerLink]="['/shipping',item.id]">Add Cart</button>
+        </div>
+        </div>
+    </div>
+</div>
+<!-- <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page">
+</mat-paginator> -->
+
+<mat-paginator
+  [length]="data.length"
+  [pageSize]="5"
+  [pageSizeOptions]="[5, 10, 15]"
+  aria-label="Select page"
+  (page)="onPageChange($event)">
+</mat-paginator>

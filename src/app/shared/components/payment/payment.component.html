@@ -1,0 +1,79 @@
+<h2 class="text-center">
+    <strong> Payment Methods</strong>
+</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+      
+            <div class="card">
+                <div class="card-body">
+                    
+                      <form [formGroup]="paymentForm">
+                        <div class="form-group">
+                            <ng-container  *ngFor="let type of paymentType">
+                                <label [for]="type" > 
+                                    <input type="radio"[id]="type" [value]="type" formControlName="paymentType" >
+                                    {{type}} </label>
+                                   
+                             </ng-container>
+                         </div>
+                         <div class="text-right text-success">
+                            <i class="fa-brands fa-cc-visa fa-2x mr-3"></i>
+                            <i class="fa-solid fa-credit-card fa-2x mr-3"></i>
+                            <i class="fa-brands fa-google-pay"></i>   
+                        </div>
+                        <div class="form-group">
+                            <label for="">Card Number</label>
+                            <input type="text" class="form-control" formControlName="cardNum">
+                            <p class="text-danger text-capitalize" *ngIf="paymentForm.controls['cardNum'].touched && paymentForm.controls['cardNum'].hasError('required')  ">
+                                This is Mandatory Field
+                              </p>
+                              <p class="text-danger text-capitalize" *ngIf=" paymentForm.controls['cardNum'] .hasError('maxlength')">
+                                The maximum length of credit card is
+                                {{paymentForm.controls['cardNum'].errors?.['maxlength'].requiredLength}}
+                                and actual length is
+                                {{paymentForm.controls['cardNum'].errors?.['maxlength'].actualLength}}
+                              </p>
+                              <!-- <p class="text-danger text-capitalize" *ngIf="paymentForm.controls['cardNum'].dirty && paymentForm.controls['cardNum'].hasError('pattern')">
+                                Please enter valid credit card number
+                              </p> -->
+                        </div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Enter a date range</mat-label>
+                            <mat-date-range-input [rangePicker]="picker">
+                              <input matStartDate placeholder="Start date">
+                              <input matEndDate placeholder="End date">
+                            </mat-date-range-input>
+                            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-date-range-picker #picker></mat-date-range-picker>
+                          </mat-form-field>
+                       <div class="text-right">
+                        <button class="btn btn-info" (click)="onBtn()">Continue</button>
+                       </div>
+                      </form>
+                    </div>
+                    
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong> Subtotal :{{prodObj.price | currency:'INR'}}</strong>
+                        </li>
+        
+                        <li class="list-group-item">
+                            <strong>Sales Tax(6.5):{{saleTax|number: '1.0-0'}}</strong>
+                        </li>
+                        <li class="list-group-item">
+                            <strong> Shipping Fee:Free</strong>
+                        </li>
+                        <li class="list-group-item">
+                            <strong> Total Due:{{totalDue |number: '1.0-0'}}</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+           
+        </div>
+     

@@ -1,0 +1,54 @@
+{
+    "shippingItem" : [
+      { 
+        "id":"1",
+       "rating": 4.5,
+        "model": "Submariner",
+      "imgUrl":"https://m.media-amazon.com/images/I/61rmkmqD5VL._AC_UL480_FMwebp_QL65_.jpg",
+        "price": 8999,
+        "features": "Water-resistant, Date Display"
+       },
+      {
+        "id":"2",
+        "rating": 4.3,
+        "model": "Speedmaster",
+      "imgUrl" :"https://m.media-amazon.com/images/I/61TapeOXotL._AC_UL480_FMwebp_QL65_.jpg",
+        "price": 8900,
+        "features": "Chronograph,Moon Watch"
+
+      },
+      {
+        "id":"3",
+        "rating": 5,
+        "model": "Nautilus",
+      "imgUrl":"https://m.media-amazon.com/images/I/61fTfbdaszL._AC_UL480_FMwebp_QL65_.jpg",
+        "price": 50000,
+        "features": "Date Display, Aquatic Sports Design"
+      },
+      {
+        "id":"4",
+        "rating": 3.8,
+        "model": "Royal Oak",
+      "imgUrl":"https://m.media-amazon.com/images/I/61GdCtUjrLL._AC_UL480_FMwebp_QL65_.jpg",
+        "price": 35000,
+        "features": "Iconic Design, Date Display"
+      },
+      {
+        "id":"5",
+        "rating": 4,
+        "model": "Carrera",
+      "imgUrl":"https://m.media-amazon.com/images/I/61wJNP17lEL._AC_UL480_FMwebp_QL65_.jpg",
+        "price": 3000,
+        "features": "Chronograph,Sporty Look"
+      },
+      {
+        "id":"6",
+        "rating": 5,
+        "model": "SRK ",
+        "imgUrl":"https://rukminim2.flixcart.com/image/612/612/xif0q/watch/p/7/m/1-waterproof-casual-luminous-simple-pink-watch-srk-girls-original-imagwcdyf3mvyqye.jpeg?q=70",
+        "price": 5000,
+         "features": "Waterproof Casual Luminous Simple Pink Watch"
+      }
+    ]
+    
+  }

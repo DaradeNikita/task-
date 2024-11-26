@@ -1,0 +1,60 @@
+<div class="container">
+    <h2><strong>Delivery Options</strong></h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                      <div class="row">
+                            <div class="col-md-6">
+                                <label for="" class="mb-2">
+                                    <input type="radio" id="" value="" name="Standard 5-7 Busniess days" >Standard 5-7 Busniess days
+                                </label> 
+                                <hr>
+                                <label for="" class="mb-2">
+                                    <input type="radio" id="" value="" name="2-4 Busniess days" >2-7 Busniess days
+                                </label>    
+                                <hr>
+                                <label for="" class="mb-2">
+                                    <input type="radio" id="" value="" name="same day on delivery" >Same day on delivery
+                                </label>
+                                <hr> 
+                               
+                            <button class="btn btn-success mt-2">Back</button>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="mb">Free</p>
+                                <hr>
+                                <p class="mb">{{100|currency : 'INR'}}</p>
+                                <hr>
+                                <p class="mb">{{200|currency : 'INR'}}</p>
+
+                                <button class="btn btn-info"  
+                                (click)="onBtn()"
+                                >Continue</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <strong>Sub Total:{{prodObj.price }} </strong>
+                    </li>
+
+                    <li class="list-group-item">
+                        <strong>Sales Tax(6.5):{{saleTax|number: '1.0-0'}}</strong>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Shipping Fee : Free</strong>
+                    </li>
+                    <li class="list-group-item">
+                        <strong> Total Due:{{totalDue |number: '1.0-0'}}</strong>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
